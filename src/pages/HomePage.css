@@ -1,0 +1,53 @@
+:root{
+  --blue:#3066ff; --blue-600:#2451d6;
+  --bg:#eef1f6; --text:#0f172a; --muted:#64748b;
+  --border:#e5e7eb; --card:#fff; --radius:16px;
+  --shadow:0 10px 30px rgba(15,23,42,.08);
+}
+*{box-sizing:border-box}
+html,body,#root{height:100%}
+body{margin:0;background:var(--bg);color:var(--text);font-family: "Noto Sans KR", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;}
+a{color:inherit}
+.container{max-width:980px;margin:0 auto;padding:0 18px}
+
+/* 히어로 */
+.hero{background:linear-gradient(145deg,var(--blue),#6aa7ff);color:#fff;padding:44px 0 60px;border-bottom-left-radius:20px;border-bottom-right-radius:20px}
+.hero__title{margin:0;font-size:32px;line-height:1.25;font-weight:900;letter-spacing:-.3px}
+.hero__subtitle{margin-top:10px;opacity:.95}
+.hero__actions{margin-top:18px;display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.hero__price{font-size:13px;opacity:.95}
+
+/* 섹션 */
+.section{padding:26px 0}
+.section--howto{padding-bottom:70px}
+.section__title{text-align:center;font-weight:800;margin:6px 0 16px}
+
+/* 카드 */
+.grid{display:grid;gap:14px;grid-template-columns:repeat(2,minmax(0,1fr))}
+@media(min-width:900px){.grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:16px;box-shadow:var(--shadow)}
+.card__icon{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:#f3f4f6;font-size:22px;margin-bottom:10px}
+.card__title{margin:0 0 6px;font-size:16px;font-weight:800}
+.card__desc{margin:0;color:var(--muted);font-size:14px}
+
+/* 이용 방법 */
+.howto{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.howto__item{display:flex;gap:12px;align-items:flex-start;background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:12px 14px;box-shadow:var(--shadow)}
+.howto__icon{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:#f3f4f6;font-size:18px;flex:0 0 auto}
+.howto__title{margin:0;font-weight:700}
+.howto__desc{margin:4px 0 0;color:var(--muted);font-size:14px}
+
+/* 버튼 */
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 16px;border-radius:12px;border:1px solid var(--border);background:#fff;cursor:pointer}
+.btn:hover{background:#f8fafc}
+.btn--primary{background:var(--blue);border-color:var(--blue);color:#fff}
+.btn--primary:hover{background:var(--blue-600)}
+
+/* 액션 영역 */
+.actions{margin-top:18px;display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+
+/* 하단 탭 */
+.bottomnav{position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1px solid var(--border);display:grid;grid-template-columns:repeat(4,1fr);height:56px;z-index:9}
+.bottomnav__item{display:flex;flex-direction:column;align-items:center;justify-content:center;text-decoration:none;color:var(--muted);font-size:12px}
+.bottomnav__icon{font-size:18px;line-height:1}
+.bottomnav__item.is-active{color:var(--blue);font-weight:700}
